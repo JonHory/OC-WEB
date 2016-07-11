@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=Edge,chrome=1">
+  <title>Title</title>
+  <style>
+    button {
+      display: block;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<button id="btn1">ios调用js</button>
+<button id="btn2">js调用ios</button>
+<button id="btn3">ios界面跳转</button>
+<div id="box"></div>
+</body>
+
+<script>
+
+
+  var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
+  var btn3 = document.getElementById("btn3");
+
+  var btn1Fun = function () {
+    alert("OC call js to alert");
+  };
+
+  var btn2Fun = function (param) {
+    var box = document.getElementById("box");
+    var html = "";
+    html += "<p>" + param["name"] + "</p>";
+    html += "<p>" + param["age"] + "</p>";
+    html += "<p>" + param["height"] + "</p>";
+    box.innerHTML = html;
+  };
+
+  btn1.onclick = function () {
+    this.style.background = "blue";
+    this.style.color = "#fff";
+    iosModel.btn1Click();
+  };
+
+  btn2.onclick = function () {
+    this.style.background = "blue";
+    this.style.color = "#fff";
+    iosModel.btn2Click();
+  };
+
+  btn3.onclick = function () {
+    this.style.background = "blue";
+    this.style.color = "#fff";
+    iosModel.btn3Click();
+  };
+
+</script>
+</html>
